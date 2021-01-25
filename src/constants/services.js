@@ -22,7 +22,6 @@ const servicesLinks = [
   },
 ]
 const ServicesLink = () => {
-  console.log(servicesLinks)
   return (
     <div className="section-center services-center">
       {servicesLinks.map(({ id, icon, title, text }) => {
