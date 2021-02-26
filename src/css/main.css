@@ -178,10 +178,6 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-.section-title {
-  margin-bottom: 4rem;
-  text-align: center;
-}
 .bg-grey {
   background: var(--clr-grey-10);
 }
