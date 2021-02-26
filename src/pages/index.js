@@ -1,21 +1,11 @@
-import React from "react"
-import {graphql} from "gatsby"
-import Layout from "../components/Layout"
-import Hero from "../components/Hero"
-import Services from "../components/Services"
-import Jobs from "../components/Jobs"
-import Projects from "../components/Projects"
-import Blogs from "../components/Blogs"
-import {FaBeer} from "@react-icons/all-files/fa/FaBeer";
-import {BiSearchAlt} from "react-icons/all";
+import React from "react";
+import Layout from "../components/Layout";
 
 export default () => {
   return (
     <Layout>
-      <Hero/>
-      <Services/>
-      <Jobs/>
+      <h2>Hero</h2>
     </Layout>
-  )
-}
+  );
+};
 // ...GatsbyImageSharpFluid
