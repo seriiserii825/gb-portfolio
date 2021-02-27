@@ -6,8 +6,8 @@ export const Blogs = ({ title, blogs }) => {
     <div className="section blogs-wrapper">
       <Title title={title} />
       <section className="section-center blogs-center">
-        {blogs.map((item) => {
-          return <Blog key={item.id} {...item} />;
+        {blogs.edges.map((item) => {
+          return <Blog key={item.node.id} {...item} />;
         })}
       </section>
     </div>

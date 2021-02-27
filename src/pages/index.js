@@ -32,17 +32,19 @@ const data = graphql`
       }
     }
     blogs: allStrapiBlogs {
-      nodes {
-        id
-        title
-        slug
-        description
-        category
-        date(formatString: "MMMM Do, YYYY")
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+      edges {
+        node {
+          id
+          title
+          slug
+          description
+          category
+          date(formatString: "MMMM Do, YYYY")
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
@@ -51,19 +53,15 @@ const data = graphql`
   }
 `;
 export default () => {
-  const {
-    allStrapiProjects: { edges },
-  } = useStaticQuery(data);
-  const {
-    blogs: { nodes },
-  } = useStaticQuery(data);
+  const { allStrapiProjects } = useStaticQuery(data);
+  const { blogs } = useStaticQuery(data);
   return (
     <Layout>
       <Hero />
       <Services />
       <Jobs />
-      <Projects projects={edges} title="Featured projects" />
-      <Blogs title="My blogs" blogs={nodes} />
+      <Projects projects={allStrapiProjects.edges} title="Featured projects" />
+      <Blogs title="My blogs" blogs={blogs} />
     </Layout>
   );
 };

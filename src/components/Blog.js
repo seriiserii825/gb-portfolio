@@ -1,7 +1,9 @@
 import React from "react";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
-const Blog = ({ title, slug, description, category, date, image }) => {
+const Blog = ({
+  node: { title, slug, description, category, date, image },
+}) => {
   return (
     <Link className="blog" to={`/blogs/${slug}`}>
       <article>

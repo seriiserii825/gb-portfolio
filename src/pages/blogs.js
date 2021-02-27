@@ -7,17 +7,19 @@ import Blogs from "../components/Blogs";
 const query = graphql`
   {
     blogs: allStrapiBlogs {
-      nodes {
-        id
-        title
-        slug
-        description
-        category
-        date(formatString: "MMMM Do, YYYY")
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+      edges {
+        node {
+          id
+          title
+          slug
+          description
+          category
+          date(formatString: "MMMM Do, YYYY")
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
@@ -27,12 +29,10 @@ const query = graphql`
 `;
 
 const Blog = () => {
-  const {
-    blogs: { nodes },
-  } = useStaticQuery(query);
+  const { blogs } = useStaticQuery(query);
   return (
     <Layout>
-      <Blogs title="All blogs" blogs={nodes} />
+      <Blogs title="All blogs" blogs={blogs} />
     </Layout>
   );
 };
