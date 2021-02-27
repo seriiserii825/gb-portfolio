@@ -924,6 +924,9 @@ Pages
   color: var(--clr-primary-1);
   margin-bottom: 2rem;
 }
+.error-container {
+  padding: 8rem 3rem;
+}
 /*
 ===============
 Blog Page
@@ -942,7 +945,6 @@ About Page
 }
 .about-img {
   margin-bottom: 2rem;
-  height: 25rem;
 }
 .about-text .section-title {
   margin-bottom: 2rem;
@@ -972,6 +974,9 @@ About Page
   color: var(--clr-primary-5);
   margin-right: 0.25rem;
   font-size: 1rem;
+}
+.about-text {
+  padding: 0 3rem;
 }
 @media screen and (min-width: 992px) {
   .about-center {
