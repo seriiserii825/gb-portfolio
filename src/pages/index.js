@@ -53,8 +53,7 @@ const data = graphql`
   }
 `;
 export default () => {
-  const { allStrapiProjects } = useStaticQuery(data);
-  const { blogs } = useStaticQuery(data);
+  const { allStrapiProjects, blogs } = useStaticQuery(data);
   return (
     <Layout>
       <Hero />
