@@ -303,7 +303,7 @@ Sidebar
   transition: var(--transition);
   transform: translateX(-100%);
 }
-.show-sidebar {
+.sidebar.show-sidebar {
   opacity: 1;
   transform: translateX(0);
 }
@@ -807,6 +807,11 @@ Blog
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 40px;
 }
+@media screen and (max-width: 576px) {
+  .blogs-center {
+    display: block;
+  }
+}
 .blog article {
   height: 100%;
 }
@@ -888,6 +893,11 @@ Footer
 }
 .footer .social-link:hover {
   color: var(--clr-primary-5);
+}
+@media screen and (max-width: 576px) {
+  .footer .social-links {
+    display: block;
+  }
 }
 /*
 ===============

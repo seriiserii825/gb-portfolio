@@ -4,7 +4,7 @@ import { FaAlignRight } from "react-icons/fa";
 import PageLinks from "../constants/links";
 import { Link } from "gatsby";
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -12,7 +12,7 @@ const Navbar = () => {
           <Link to="/">
             <Logo />
           </Link>
-          <button className="toggle-btn">
+          <button className="toggle-btn" onClick={toggleSidebar}>
             <FaAlignRight />
           </button>
         </div>
