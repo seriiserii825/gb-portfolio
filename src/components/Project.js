@@ -2,6 +2,8 @@ import React from "react";
 import Img from "gatsby-image";
 import GithubSvg from "./../assets/github.svg";
 import SiteSvg from "./../assets/site.svg";
+import PropTypes from "prop-types";
+
 const Project = ({
   node: { image, description, github, title, url, strapiId, skills },
 }) => {
@@ -20,11 +22,11 @@ const Project = ({
         </div>
         <div className="project-links">
           {github && (
-            <a target="_blank" href={github}>
+            <a target="_blank" rel="noreferrer" href={github}>
               <GithubSvg />
             </a>
           )}
-          <a target="_blank" href={url}>
+          <a target="_blank" rel="noreferrer" href={url}>
             <SiteSvg />
           </a>
         </div>
@@ -32,5 +34,12 @@ const Project = ({
     </article>
   );
 };
-
+Project.propTypes = {
+  image: PropTypes.object.isRequired,
+  description: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default Project;
