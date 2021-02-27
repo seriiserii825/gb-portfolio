@@ -1,5 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
+import GithubSvg from "./../assets/github.svg";
+import SiteSvg from "./../assets/site.svg";
 const Project = ({
   node: { image, description, github, title, url, strapiId, skills },
 }) => {
@@ -17,7 +19,14 @@ const Project = ({
           })}
         </div>
         <div className="project-links">
-          <a href={github}>Github</a>
+          {github && (
+            <a target="_blank" href={github}>
+              <GithubSvg />
+            </a>
+          )}
+          <a target="_blank" href={url}>
+            <SiteSvg />
+          </a>
         </div>
       </div>
     </article>
