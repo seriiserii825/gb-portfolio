@@ -182,18 +182,9 @@ p {
 /* social links */
 .social-links {
   margin-top: 2rem;
-  width: 15rem;
   display: flex;
+  width: 60%;
   justify-content: space-between;
-}
-@media screen and (max-width: 768px) {
-  .social-links {
-    width: auto;
-    justify-content: center;
-  }
-  .social-links li {
-    margin-right: 10px;
-  }
 }
 .social-links svg {
   width: 60px;
@@ -868,11 +859,12 @@ Footer
 ===============
 */
 .footer {
-  height: 9rem;
+  display: flex;
+  justify-content: center;
+  padding: 6rem;
+  color: white;
   background: #222;
   text-align: center;
-  display: grid;
-  place-items: center;
 }
 .footer h4 {
   margin-top: 0.5rem;
@@ -883,10 +875,15 @@ Footer
 .footer h4 span {
   color: var(--clr-primary-5);
 }
-.footer-links {
-  margin: 0 auto 1rem auto;
+.footer-links li {
+  margin-right: 4%;
 }
+.footer .social-links {
+  width: auto;
+}
+
 .footer .social-link {
+  display: block;
   color: var(--clr-white);
 }
 .footer .social-link:hover {

@@ -17,7 +17,7 @@ const Project = ({
         <div className="project-desc">{description}</div>
         <div className="project-stack">
           {skills.map((item) => {
-            return <span>{item.title}</span>;
+            return <span key={item.id}>{item.title}</span>;
           })}
         </div>
         <div className="project-links">
@@ -33,13 +33,5 @@ const Project = ({
       </div>
     </article>
   );
-};
-Project.propTypes = {
-  image: PropTypes.object.isRequired,
-  description: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default Project;
