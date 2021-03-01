@@ -15,7 +15,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/, // See below to configure properly
+        },
+      },
+    },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,31 +32,18 @@ module.exports = {
         path: `${__dirname}/src/assets/`,
       },
     },
-    // {
-      // resolve: `gatsby-source-strapi`,
-      // options: {
-      //   apiURL: `http://localhost:1337`,
-      //   queryLimit: 1000, // Default to 100
-        // contentTypes: [`jobs`, `blogs`, `projects`],
-        // singleType: `about`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        // apiURL: `http://localhost:1337`,
+        apiURL: `https://st-portfolio-smilga.herokuapp.com`,
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`jobs`, "projects", "blogs"],
+        singleTypes: [`about`],
         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
         // contentTypes: [],
         // singleTypes: [],
-      // },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-webfonts`,
-    //   options: {
-    //     fonts: {
-    //       google: [
-    //         {
-    //           family: "Roboto",
-    //           variants: ["400", "700"],
-    //         },
-    //         { family: "Open Sans" },
-    //       ],
-    //     },
-    //   },
-    // },
+      },
+    },
   ],
 };

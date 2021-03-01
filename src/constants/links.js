@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 const data = [
   {
     id: 1,
@@ -18,23 +18,23 @@ const data = [
   },
   {
     id: 4,
-    text: "blog",
-    url: "/blog/",
+    text: "blogs",
+    url: "/blogs/",
   },
   {
     id: 5,
-    text: "contact",
-    url: "/contact/",
+    text: "contacts",
+    url: "/contacts/",
   },
-]
+];
 
-const tempLinks = data.map(link => {
+const tempLinks = data.map((link) => {
   return (
     <li key={link.id}>
       <Link to={link.url}>{link.text}</Link>
     </li>
-  )
-})
+  );
+});
 // I KNOW WE CAN COMBINE IT !!!!!
 
 export default ({ styleClass }) => {
@@ -42,5 +42,5 @@ export default ({ styleClass }) => {
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
       {tempLinks}
     </ul>
-  )
-}
+  );
+};

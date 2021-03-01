@@ -1,21 +1,24 @@
-import React from "react"
-import logo from "../assets/logo.svg"
-import {FaAlignRight} from "react-icons/fa"
-import PageLinks from "../constants/links"
+import React from "react";
+import Logo from "../assets/logo.svg";
+import { FaAlignRight } from "react-icons/fa";
+import PageLinks from "../constants/links";
+import { Link } from "gatsby";
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <img src={logo} alt=""/>
-          <button className="toggle-btn">
-            <FaAlignRight/>
+          <Link to="/">
+            <Logo />
+          </Link>
+          <button className="toggle-btn" onClick={toggleSidebar}>
+            <FaAlignRight />
           </button>
         </div>
-        <PageLinks styleClass="nav-links"/>
+        <PageLinks styleClass="nav-links" />
       </div>
     </nav>
-  )
-}
-export default Navbar
+  );
+};
+export default Navbar;

@@ -1,9 +1,9 @@
 import React from "react";
+import Image from "gatsby-image";
 import { Link } from "gatsby";
-import GatsbyImage from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 import SocialLinks from "../constants/socialLinks";
-import heroImgSrc from "../assets/hero-img.png";
+import styles from "./Hero.module.scss";
 // ...GatsbyImageSharpFluid
 const query = graphql`
   {
@@ -17,28 +17,27 @@ const query = graphql`
   }
 `;
 const Hero = () => {
-  console.log(heroImgSrc);
   const {
     file: {
       childImageSharp: { fluid },
     },
   } = useStaticQuery(query);
   return (
-    <div>
-      <div className="hero">
-        <div className="section-center hero-center">
-          <article className="hero-info">
-            <div>
-              <div className="underline"></div>
-              <h1>I am John</h1>
-              <h4>Freelance, web and UI designer</h4>
-              <Link to="/contact" className="btn">
-                Contact me
-              </Link>
-              <SocialLinks />
-            </div>
-          </article>
-          <GatsbyImage fluid={fluid} />
+    <div className={styles.hero}>
+      <div className={styles.heroCenter}>
+        <article className={styles.heroInfo}>
+          <div>
+            <div className="underline"></div>
+            <h1>I am John</h1>
+            <h4>Freelance, web and UI designer</h4>
+            <Link to="/contacts" className="btn">
+              Contact me
+            </Link>
+            <SocialLinks />
+          </div>
+        </article>
+        <div className={styles.heroImg}>
+          <Image fluid={fluid} />
         </div>
       </div>
     </div>
