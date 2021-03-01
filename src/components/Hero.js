@@ -1,22 +1,28 @@
-import React from "react"
-import Image from "gatsby-image"
-import {Link} from "gatsby"
-import {graphql, useStaticQuery} from "gatsby"
-import SocialLinks from "../constants/socialLinks"
+import React from "react";
+import { Link } from "gatsby";
+import GatsbyImage from "gatsby-image";
+import { graphql, useStaticQuery } from "gatsby";
+import SocialLinks from "../constants/socialLinks";
+import heroImgSrc from "../assets/hero-img.png";
 // ...GatsbyImageSharpFluid
 const query = graphql`
-{
-    file(relativePath: {eq: "hero-img.png"}) {
+  {
+    file(relativePath: { eq: "hero-img.png" }) {
       childImageSharp {
         fluid {
-         ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
-`
+`;
 const Hero = () => {
-  const {file: {childImageSharp: {fluid}}} = useStaticQuery(query)
+  console.log(heroImgSrc);
+  const {
+    file: {
+      childImageSharp: { fluid },
+    },
+  } = useStaticQuery(query);
   return (
     <div>
       <div className="hero">
@@ -26,14 +32,16 @@ const Hero = () => {
               <div className="underline"></div>
               <h1>I am John</h1>
               <h4>Freelance, web and UI designer</h4>
-              <Link to="/contact" className="btn">Contact me</Link>
-              <SocialLinks/>
+              <Link to="/contact" className="btn">
+                Contact me
+              </Link>
+              <SocialLinks />
             </div>
           </article>
-          <Image fluid={fluid} className="hero-img"/>
+          <GatsbyImage fluid={fluid} />
         </div>
       </div>
     </div>
-  )
-}
-export default Hero
+  );
+};
+export default Hero;
