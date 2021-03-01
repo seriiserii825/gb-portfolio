@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
@@ -13,13 +12,6 @@ const data = graphql`
       edges {
         node {
           id
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           description
           github
           title
@@ -41,13 +33,6 @@ const data = graphql`
           description
           category
           date(formatString: "MMMM Do, YYYY")
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }

@@ -15,13 +15,6 @@ const query = graphql`
           description
           category
           date(formatString: "MMMM Do, YYYY")
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }

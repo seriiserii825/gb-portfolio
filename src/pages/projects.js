@@ -9,13 +9,6 @@ const data = graphql`
       edges {
         node {
           id
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           description
           github
           title

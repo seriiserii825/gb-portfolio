@@ -52,15 +52,7 @@ const Jobs = () => {
         <div className="job-info">
           {edges.map((item) => {
             const {
-              node: {
-                id,
-                number,
-                strapiId,
-                position,
-                company,
-                date,
-                description,
-              },
+              node: { id, number, position, company, description },
             } = item;
             if (number === value) {
               return (

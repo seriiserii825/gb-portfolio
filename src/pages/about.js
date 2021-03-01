@@ -15,13 +15,6 @@ const query = graphql`
             id
             title
           }
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }
@@ -37,9 +30,9 @@ const About = () => {
       title,
       info,
       stack,
-      image: {
-        childImageSharp: { fluid },
-      },
+      // image: {
+      //   childImageSharp: { fluid },
+      // },
     },
   } = edges[0];
 
@@ -47,7 +40,6 @@ const About = () => {
     <Layout>
       <section className="about-page">
         <div className="section-center about-center">
-          <Image fluid={fluid} className="about-img" />
           <article className="about-text">
             <Title title={title} />
             <p>{info}</p>
